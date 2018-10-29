@@ -6,7 +6,7 @@ import { createStore } from "redux";
 
 import { rootReducer } from "./redux/reducers";
 
-import MainComponent from "./components/MainComponent";
+import MainComponentContainers from "./containers/MainComponentContainers";
 
 import "./index.css";
 
@@ -20,7 +20,7 @@ const store = createStore(rootReducer); // принимает в себя reduse
 
 ReactDOM.render(
   <Provider store={store}>
-    <MainComponent />
+    <MainComponentContainers />
   </Provider>,
   document.getElementById("root")
 );

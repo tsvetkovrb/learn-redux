@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { changeFirstName, changeSecondName } from "../redux/actions";
 
 class MainComponent extends Component {
   render() {
@@ -36,22 +33,4 @@ class MainComponent extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  // проводит данные из state к компоненту, который мы оборачиваем
-  return {
-    firstName: state.firstName,
-    secondName: state.secondName
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    changeFirstName: bindActionCreators(changeFirstName, dispatch),
-    changeSecondName: bindActionCreators(changeSecondName, dispatch)
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MainComponent);
+export default MainComponent;
