@@ -7,10 +7,12 @@ class MainComponent extends Component {
       secondName,
       thirdName,
       age,
+      text,
       changeFirstName,
       changeSecondName,
       changeThirdName,
-      changeAge
+      changeAge,
+      showTextField
     } = this.props;
 
     // let myAge = "год";
@@ -53,7 +55,8 @@ class MainComponent extends Component {
             changeAge(event.target.value);
           }}
         />
-
+        <button onClick={() => showTextField(true)}>Показать текст</button>
+        {text && <p>текст</p>}
         <div>
           ФИО:
           <br /> {`${secondName} ${firstName} ${thirdName}`}

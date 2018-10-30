@@ -6,15 +6,24 @@ import { createStore } from "redux";
 
 import { rootReducer } from "./redux/reducers";
 
-import MainComponentContainers from "./containers/MainComponentContainers";
+import MainComponentContainer from "./containers/MainComponentContainer";
 
 import "./index.css";
 
-const store = createStore(rootReducer); // принимает в себя reduser и изначальные данные;
+const initialState = {
+  firstName: "Роман",
+  secondName: "Цветков",
+  thirdName: "Борисович",
+  age: "21",
+  showText: false
+};
+
+const store = createStore(rootReducer, initialState); // принимает в себя reduser и изначальные данные;
+console.log("index");
 
 ReactDOM.render(
   <Provider store={store}>
-    <MainComponentContainers />
+    <MainComponentContainer />
   </Provider>,
   document.getElementById("root")
 );

@@ -2,7 +2,8 @@ import {
   ACTION_CHANGE_FIRST_NAME,
   ACTION_CHANGE_SECOND_NAME,
   ACTION_CHANGE_THIRD_NAME,
-  ACTION_CHANGE_AGE
+  ACTION_CHANGE_AGE,
+  ACTION_SHOW_TEXT
 } from "./actionTypes";
 
 /**
@@ -14,7 +15,7 @@ export const changeFirstName = newFirstName => {
 
   return {
     type: ACTION_CHANGE_FIRST_NAME,
-    payload: newFirstName
+    newFirstName
   };
 };
 
@@ -22,14 +23,14 @@ export const changeSecondName = newSecondName => {
   // должен возвращать объект, который мы будем dispatch'ить
   return {
     type: ACTION_CHANGE_SECOND_NAME,
-    payload: newSecondName
+    newSecondName
   };
 };
 
 export const changeThirdName = newThirdName => {
   return {
     type: ACTION_CHANGE_THIRD_NAME,
-    payload: newThirdName
+    newThirdName
   };
 };
 
@@ -37,6 +38,13 @@ export const changeAge = newAge => {
   return {
     type: ACTION_CHANGE_AGE,
     newAge
+  };
+};
+
+export const showTextField = text => {
+  return {
+    type: ACTION_SHOW_TEXT,
+    text
   };
 };
 

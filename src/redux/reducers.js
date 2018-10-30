@@ -2,15 +2,9 @@ import {
   ACTION_CHANGE_FIRST_NAME,
   ACTION_CHANGE_SECOND_NAME,
   ACTION_CHANGE_THIRD_NAME,
-  ACTION_CHANGE_AGE
+  ACTION_CHANGE_AGE,
+  ACTION_SHOW_TEXT
 } from "./actionTypes";
-
-const initialState = {
-  firstName: "Роман",
-  secondName: "Цветков",
-  thirdName: "Борисович",
-  age: "21"
-};
 
 //создаём константы действий
 
@@ -27,17 +21,19 @@ const initialState = {
 //   payload: null
 // };
 
-export const rootReducer = (state = initialState, action) => {
+export const rootReducer = (state, action) => {
   // принимает в себя исходный state и действие, которое у нас произошло
   switch (action.type) {
     case ACTION_CHANGE_FIRST_NAME:
-      return { ...state, firstName: action.payload };
+      return { ...state, firstName: action.newFirstName };
     case ACTION_CHANGE_SECOND_NAME:
-      return { ...state, secondName: action.payload };
+      return { ...state, secondName: action.newSecondName };
     case ACTION_CHANGE_THIRD_NAME:
-      return { ...state, thirdName: action.payload };
+      return { ...state, thirdName: action.newThirdName };
     case ACTION_CHANGE_AGE:
       return { ...state, age: action.newAge };
+    case ACTION_SHOW_TEXT:
+      return { ...state, showText: action.text };
 
     default:
       return state;
