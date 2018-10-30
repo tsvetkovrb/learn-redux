@@ -5,7 +5,8 @@ import MainComponent from "../components/MainComponent";
 import {
   changeFirstName,
   changeSecondName,
-  changeThirdName
+  changeThirdName,
+  changeAge
 } from "../redux/actions";
 
 const mapStateToProps = state => {
@@ -13,7 +14,8 @@ const mapStateToProps = state => {
   return {
     firstName: state.firstName,
     secondName: state.secondName,
-    thirdName: state.thirdName
+    thirdName: state.thirdName,
+    age: state.age
   };
 };
 
@@ -21,7 +23,8 @@ const mapDispatchToProps = dispatch => {
   return {
     changeFirstName: bindActionCreators(changeFirstName, dispatch),
     changeSecondName: bindActionCreators(changeSecondName, dispatch),
-    changeThirdName: bindActionCreators(changeThirdName, dispatch)
+    changeThirdName: bindActionCreators(changeThirdName, dispatch),
+    changeAge: bindActionCreators(changeAge, dispatch)
   };
 };
 

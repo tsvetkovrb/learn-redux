@@ -1,8 +1,10 @@
 import {
   ACTION_CHANGE_FIRST_NAME,
   ACTION_CHANGE_SECOND_NAME,
-  ACTION_CHANGE_THIRD_NAME
-} from "../index";
+  ACTION_CHANGE_THIRD_NAME,
+  ACTION_CHANGE_AGE
+} from "./actionTypes";
+
 /**
  * changeFirstName & changeSecondName являеются actionCreators
  */
@@ -28,6 +30,13 @@ export const changeThirdName = newThirdName => {
   return {
     type: ACTION_CHANGE_THIRD_NAME,
     payload: newThirdName
+  };
+};
+
+export const changeAge = newAge => {
+  return {
+    type: ACTION_CHANGE_AGE,
+    newAge
   };
 };
 

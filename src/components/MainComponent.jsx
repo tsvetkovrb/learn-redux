@@ -6,10 +6,18 @@ class MainComponent extends Component {
       firstName,
       secondName,
       thirdName,
+      age,
       changeFirstName,
       changeSecondName,
-      changeThirdName
+      changeThirdName,
+      changeAge
     } = this.props;
+
+    // let myAge = "год";
+
+    // if (age <= 4 && age !== 0) {
+    //   myAge = "года";
+    // }
 
     return (
       <div className="app">
@@ -32,13 +40,28 @@ class MainComponent extends Component {
         <input
           type="text"
           value={thirdName}
-          placeholder="Имя"
+          placeholder="Отчество"
           onChange={event => {
             changeThirdName(event.target.value);
           }}
         />
+        <input
+          type="text"
+          value={age}
+          placeholder="Возраст"
+          onChange={event => {
+            changeAge(event.target.value);
+          }}
+        />
 
-        <div>{`${firstName} ${secondName} ${thirdName}`}</div>
+        <div>
+          ФИО:
+          <br /> {`${secondName} ${firstName} ${thirdName}`}
+          <br />
+          <br />
+          Возраст: {`${+age}`}
+          <br />
+        </div>
       </div>
     );
   }

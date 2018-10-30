@@ -1,13 +1,15 @@
 import {
   ACTION_CHANGE_FIRST_NAME,
   ACTION_CHANGE_SECOND_NAME,
-  ACTION_CHANGE_THIRD_NAME
-} from "../index";
+  ACTION_CHANGE_THIRD_NAME,
+  ACTION_CHANGE_AGE
+} from "./actionTypes";
 
 const initialState = {
   firstName: "Роман",
   secondName: "Цветков",
-  thirdName: "Борисович"
+  thirdName: "Борисович",
+  age: "21"
 };
 
 //создаём константы действий
@@ -34,6 +36,8 @@ export const rootReducer = (state = initialState, action) => {
       return { ...state, secondName: action.payload };
     case ACTION_CHANGE_THIRD_NAME:
       return { ...state, thirdName: action.payload };
+    case ACTION_CHANGE_AGE:
+      return { ...state, age: action.newAge };
 
     default:
       return state;
