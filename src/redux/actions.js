@@ -1,4 +1,8 @@
-import { ACTION_CHANGE_FIRST_NAME, ACTION_CHANGE_SECOND_NAME } from "../index";
+import {
+  ACTION_CHANGE_FIRST_NAME,
+  ACTION_CHANGE_SECOND_NAME,
+  ACTION_CHANGE_THIRD_NAME
+} from "../index";
 /**
  * changeFirstName & changeSecondName являеются actionCreators
  */
@@ -17,6 +21,13 @@ export const changeSecondName = newSecondName => {
   return {
     type: ACTION_CHANGE_SECOND_NAME,
     payload: newSecondName
+  };
+};
+
+export const changeThirdName = newThirdName => {
+  return {
+    type: ACTION_CHANGE_THIRD_NAME,
+    payload: newThirdName
   };
 };
 

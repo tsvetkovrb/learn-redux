@@ -15,6 +15,7 @@ import "./index.css";
  */
 export const ACTION_CHANGE_FIRST_NAME = "ACTION_CHANGE_FIRST_NAME";
 export const ACTION_CHANGE_SECOND_NAME = "ACTION_CHANGE_SECOND_NAME";
+export const ACTION_CHANGE_THIRD_NAME = "ACTION_CHANGE_THIRD_NAME";
 
 const store = createStore(rootReducer); // принимает в себя reduser и изначальные данные;
 

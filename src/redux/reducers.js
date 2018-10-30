@@ -1,8 +1,13 @@
-import { ACTION_CHANGE_FIRST_NAME, ACTION_CHANGE_SECOND_NAME } from "../index";
+import {
+  ACTION_CHANGE_FIRST_NAME,
+  ACTION_CHANGE_SECOND_NAME,
+  ACTION_CHANGE_THIRD_NAME
+} from "../index";
 
 const initialState = {
   firstName: "Роман",
-  secondName: "Цветков"
+  secondName: "Цветков",
+  thirdName: "Борисович"
 };
 
 //создаём константы действий
@@ -27,6 +32,8 @@ export const rootReducer = (state = initialState, action) => {
       return { ...state, firstName: action.payload };
     case ACTION_CHANGE_SECOND_NAME:
       return { ...state, secondName: action.payload };
+    case ACTION_CHANGE_THIRD_NAME:
+      return { ...state, thirdName: action.payload };
 
     default:
       return state;

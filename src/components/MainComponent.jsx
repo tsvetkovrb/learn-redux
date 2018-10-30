@@ -5,12 +5,22 @@ class MainComponent extends Component {
     const {
       firstName,
       secondName,
+      thirdName,
       changeFirstName,
-      changeSecondName
+      changeSecondName,
+      changeThirdName
     } = this.props;
 
     return (
       <div className="app">
+        <input
+          type="text"
+          value={secondName}
+          placeholder="Фамилия"
+          onChange={event => {
+            changeSecondName(event.target.value);
+          }}
+        />
         <input
           type="text"
           value={firstName}
@@ -21,13 +31,14 @@ class MainComponent extends Component {
         />
         <input
           type="text"
-          value={secondName}
-          placeholder="Фамилия"
+          value={thirdName}
+          placeholder="Имя"
           onChange={event => {
-            changeSecondName(event.target.value);
+            changeThirdName(event.target.value);
           }}
         />
-        <div>{`${firstName} ${secondName}`}</div>
+
+        <div>{`${firstName} ${secondName} ${thirdName}`}</div>
       </div>
     );
   }
