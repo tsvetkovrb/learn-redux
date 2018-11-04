@@ -1,1 +1,1 @@
-The study of the basic principles of "Redux";
+Изучаю основные принципы Redux.
