@@ -1,29 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import App from "./App";
 
-import { rootReducer } from "./redux/reducers";
-
-import MainComponentContainer from "./containers/MainComponentContainer";
+import { reducer } from "./redux/reducers/index.js";
 
 import "./index.css";
 
-const initialState = {
-  firstName: "Роман",
-  secondName: "Цветков",
-  thirdName: "Борисович",
-  age: "21",
-  showText: false
+const logger = store => {
+  return nextArgument => {
+    return action => {
+      console.log("[Middleware] Dispatching", action);
+      const result = nextArgument(action);
+      console.log("[Middleware] next state", store.getState());
+      return result;
+    };
+  };
 };
 
-const store = createStore(rootReducer, initialState); // принимает в себя reduser и изначальные данные;
-console.log("index");
+const store = createStore(reducer, applyMiddleware(logger));
 
 ReactDOM.render(
   <Provider store={store}>
-    <MainComponentContainer />
+    <App />
   </Provider>,
   document.getElementById("root")
 );
