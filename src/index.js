@@ -9,11 +9,19 @@ import { reducer } from "./redux/reducers/index.js";
 import "./index.css";
 
 const logger = store => {
-  return nextArgument => {
+  console.log("Logger принимает стору", store);
+  return next => {
+    console.log("После сторы идёт [next]", next);
     return action => {
-      console.log("[Middleware] Dispatching", action);
-      const result = nextArgument(action);
-      console.log("[Middleware] next state", store.getState());
+      console.log("Предыдущее состояние", store.getState());
+
+      if (action.type === "ADD") {
+        console.log("ADDDDDDDDD");
+      }
+      console.log("Потом диспчится экшен [Middleware] Dispatching", action);
+      const result = next(action);
+      console.log("И вызывается [next(action)]", result);
+      console.log("[Middleware] Изменённое состояние", store.getState());
       return result;
     };
   };
