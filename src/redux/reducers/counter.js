@@ -19,12 +19,12 @@ export const counter = (state = initialState, action) => {
     case ADD:
       return {
         ...state,
-        counter: state.counter + action.payload
+        counter: state.counter + action.value
       };
     case SUBTRACT:
       return {
         ...state,
-        counter: state.counter - action.payload
+        counter: state.counter - action.value
       };
     case RESET:
       return {
