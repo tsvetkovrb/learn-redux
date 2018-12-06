@@ -6,12 +6,6 @@ export const increment = () => {
   };
 };
 
-export const fetchDecrement = value => dispatch => {
-  return setTimeout(() => {
-    dispatch(add(value));
-  }, 2000);
-};
-
 export const decrement = () => {
   return {
     type: DECREMENT

@@ -4,6 +4,14 @@ const initialState = {
   results: []
 };
 
+const deleteResult = (state, action) => {
+  const updatedArray = state.results.filter(result => result.id !== action.id);
+  return {
+    ...state,
+    results: updatedArray
+  };
+};
+
 export const result = (state = initialState, action) => {
   switch (action.type) {
     case STORE_RESULT:
@@ -12,16 +20,7 @@ export const result = (state = initialState, action) => {
         results: state.results.concat({ value: action.result, id: new Date() })
       };
     case DELETE_RESULT:
-      // const id = 2;
-      // const newArray = [...state.results];
-      // newArray.splice(id, 1);
-      const updatedArray = state.results.filter(
-        result => result.id !== action.id
-      );
-      return {
-        ...state,
-        results: updatedArray
-      };
+      return deleteResult(state, action);
     default:
       return state;
   }

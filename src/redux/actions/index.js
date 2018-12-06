@@ -7,4 +7,4 @@ export {
   subtract
 } from "./counter";
 
-export { deleteResult, storeResult } from "./result";
+export { deleteResult, saveResult, storeResult } from "./result";

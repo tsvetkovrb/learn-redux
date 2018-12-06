@@ -4,12 +4,11 @@ import { connect } from "react-redux";
 import {
   increment,
   decrement,
-  // add,
+  add,
   subtract,
   reset,
   storeResult,
-  deleteResult,
-  fetchDecrement
+  deleteResult
 } from "../../redux/actions";
 
 import CounterControl from "../../components/CounterControl/CounterControl";
@@ -66,7 +65,7 @@ const mapDispatch = dispatch => {
   return {
     onIncrementCounter: () => dispatch(increment()),
     onDecrementCounter: () => dispatch(decrement()),
-    onAdd: value => dispatch(fetchDecrement(value)),
+    onAdd: value => dispatch(add(value)),
     onSubtract: value => dispatch(subtract(value)),
     onReset: () => dispatch(reset()),
     onStoreResult: result => dispatch(storeResult(result)),
