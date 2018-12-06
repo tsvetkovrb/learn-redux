@@ -1,4 +1,4 @@
-import { STORE_RESULT, DELETE_RESULT } from "../actions/actions";
+import { STORE_RESULT, DELETE_RESULT } from "../actions/actionTypes";
 
 const initialState = {
   results: []
@@ -15,7 +15,9 @@ export const result = (state = initialState, action) => {
       // const id = 2;
       // const newArray = [...state.results];
       // newArray.splice(id, 1);
-      const updatedArray = state.results.filter(result => result.id !== action.id);
+      const updatedArray = state.results.filter(
+        result => result.id !== action.id
+      );
       return {
         ...state,
         results: updatedArray
